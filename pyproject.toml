@@ -1,0 +1,10 @@
+[project]
+name = "archery-shop"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "flake8>=7.3.0",
+    "reflex>=0.8.16",
+]
