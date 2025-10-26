@@ -6,6 +6,20 @@ from components.header import header_component
 def main_layout(content):
     layout_content = rx.box(
         header_component(),
-        content,
+        rx.hstack(
+            rx.hstack(
+                content,
+                width=rx.breakpoints(
+                    initial="100%",
+                    sm="70%",
+                    lg="35%",
+                ),
+                justify="center",
+                padding="10px",
+                margin_top="70px",
+            ),
+            justify="center",
+            width="100%",
+        ),
     )
     return layout_content

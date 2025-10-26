@@ -13,6 +13,7 @@ def header_component():
                                 color="black",
                                 size=27,
                             ),
+                            cursor="pointer",
                         ),
                         rx.menu.content(
                             rx.menu.item(
@@ -74,6 +75,10 @@ def header_component():
                             align_items="center",
                         ),
                         width="50%",
+                        cursor="pointer",
+                        on_click=rx.redirect(
+                            "/basket",
+                        ),
                     ),
                     spacing="5",
                 ),
@@ -82,7 +87,9 @@ def header_component():
                 rx.hstack(
                     rx.avatar(
                         fallback="MA",
-                    )
+                    ),
+                    cursor="pointer",
+                    on_click=rx.redirect("/"),
                 )
             ),
             justify="between",

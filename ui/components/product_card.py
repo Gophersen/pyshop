@@ -40,10 +40,10 @@ def product_card():
             bg="white",
             border_radius="10px",
             width="100%",
-            # height="15vh",
         ),
         justify="center",
         width="100%",
+        cursor="pointer",
     )
     return content
 

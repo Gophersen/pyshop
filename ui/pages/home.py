@@ -11,6 +11,7 @@ def simple_banner(src: str, margin_top: str = ""):
             src=src,
             border_radius="10px",
             margin_top=margin_top,
+            cursor="pointer",
         ),
     )
     return content
@@ -38,6 +39,7 @@ def brand_box():
             justify_content="center",
             height="10vh",
             border_radius="10px",
+            cursor="pointer",
         ),
     )
 
@@ -68,6 +70,7 @@ def products_heading(title: str):
             ),
             spacing="1",
             justify="between",
+            cursor="pointer",
         ),
         rx.text(
             title,
@@ -83,36 +86,22 @@ def products_heading(title: str):
 
 
 def home_page():
-    content = rx.hstack(
-        rx.hstack(
-            rx.vstack(
-                carousel(),
-                products_heading("دسته بندی ها"),
-                brands_boxes(margin_top="8px"),
-                brands_boxes(),
-                products_heading("محصولات پیشنهادی"),
-                products_column(),
-                products_column(),
-                simple_banner(src="/images/banner-2.jpg", margin_top="8px"),
-                products_heading("جدیدترین محصولات"),
-                products_column(),
-                simple_banner(src="/images/banner-3.jpg", margin_top="8px"),
-                products_heading("برندها"),
-                brands_boxes(),
-                align="center",
-                justify="between",
-                width="100%",
-            ),
-            width=rx.breakpoints(
-                initial="100%",
-                sm="70%",
-                lg="35%",
-            ),
-            justify="center",
-            padding="10px",
-            margin_top="70px",
-        ),
-        justify="center",
+    content = rx.vstack(
+        carousel(),
+        products_heading("دسته بندی ها"),
+        brands_boxes(margin_top="8px"),
+        brands_boxes(),
+        products_heading("محصولات پیشنهادی"),
+        products_column(),
+        products_column(),
+        simple_banner(src="/images/banner-2.jpg", margin_top="8px"),
+        products_heading("جدیدترین محصولات"),
+        products_column(),
+        simple_banner(src="/images/banner-3.jpg", margin_top="8px"),
+        products_heading("برندها"),
+        brands_boxes(),
+        align="center",
+        justify="between",
         width="100%",
     )
 

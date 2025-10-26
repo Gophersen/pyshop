@@ -1,6 +1,7 @@
 import reflex as rx
 
 from pages.home import home_page
+from pages.basket import basket_page
 
 
 app = rx.App(
@@ -16,4 +17,8 @@ app = rx.App(
 app.add_page(
     home_page,
     route="/",
+)
+app.add_page(
+    basket_page,
+    route="/basket",
 )

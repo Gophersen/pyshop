@@ -26,4 +26,5 @@ def carousel(margin_top: str = ""):
             display="none",
         ),
         width="100%",
+        cursor="pointer",
     )
