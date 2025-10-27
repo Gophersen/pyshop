@@ -3,20 +3,19 @@ import reflex as rx
 from layouts.auth import auth_layout
 
 
-def login_page():
+def otp_page():
     content = rx.vstack(
         rx.hstack(
             rx.text("."),
             rx.image(
                 "/images/logo-32-3.png",
-                on_click=rx.redirect("/"),
                 cursor="pointer",
             ),
             rx.icon(
                 "arrow-right",
                 color="black",
                 cursor="pointer",
-                on_click=rx.redirect("/"),
+                on_click=rx.redirect("/login"),
             ),
             justify="between",
             width="100%",
@@ -39,7 +38,7 @@ def login_page():
         ),
         rx.hstack(
             rx.text(
-                "لطفا شماره موبایل خود را وارد کنید",
+                "لطفا کد تایید ارسال شده را وارد کنید",
                 color="grey",
                 size="2",
                 align="right",
@@ -49,30 +48,30 @@ def login_page():
             padding_bottom="15px",
             width="100%",
         ),
-        rx.input(
-            rx.input.slot(
-                rx.icon(
-                    "phone",
-                    color="black",
-                    size=20,
-                ),
+        rx.hstack(
+            rx.input(
+                type="number",
+                max_length=5,
+                border="1px solid grey",
+                color="black",
+                radius="large",
+                text_align="center",
+                bg="white",
+                size="3",
+                style={
+                    "input::placeholder": {"color": "grey"},
+                },
+                placeholder="کد تایید",
             ),
-            color="black",
-            radius="large",
-            bg="white",
-            border="1px solid grey",
-            style={
-                "input::placeholder": {"color": "grey"},
-            },
-            size="3",
-            type="number",
-            required=True,
-            max_length=11,
-            min_length=10,
+            justify="between",
+            width=rx.breakpoints(
+                initial="40%",
+                sm="70%",
+                lg="35%",
+            ),
         ),
         rx.button(
-            "ورود یا ثبت نام",
-            # color_scheme="tomato",
+            "تایید و ورود",
             bg="#ED0012",
             size="3",
             margin_top="10px",

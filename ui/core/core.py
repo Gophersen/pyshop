@@ -3,6 +3,7 @@ import reflex as rx
 from pages.home import home_page
 from pages.basket import basket_page
 from pages.login import login_page
+from pages.otp import otp_page
 
 
 app = rx.App(
@@ -28,3 +29,4 @@ app.add_page(
     login_page,
     route="/login",
 )
+app.add_page(otp_page, route="/login/otp")
