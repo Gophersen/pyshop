@@ -21,5 +21,6 @@ def main_layout(content):
             justify="center",
             width="100%",
         ),
+        style={"body": {"overview": "hidden"}},
     )
     return layout_content
